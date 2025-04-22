@@ -85,3 +85,25 @@ html, body {
   scrollbar-color: #00FF00 transparent;
   scrollbar-width: thin;
 }
+@keyframes glitch-flash {
+  0% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  25% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #00ff88);
+  }
+  75% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px #00ff88);
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+.glitch-flash {
+  animation: glitch-flash 0.6s ease-out;
+}

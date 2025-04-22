@@ -9,18 +9,11 @@ const { title, scanTitle, lines, continue: continueLabel } = pagesContent.coreId
 
 export default function CoreIdentity() {
   const [scanning, setScanning] = useState(true)
-  const [visibleLines, setVisibleLines] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
-    let i = 0
     const timeout = setTimeout(() => {
       setScanning(false)
-      const interval = setInterval(() => {
-        setVisibleLines(prev => [...prev, lines[i]])
-        i++
-        if (i >= lines.length) clearInterval(interval)
-      }, 600)
     }, 2000)
     return () => clearTimeout(timeout)
   }, [])
@@ -33,16 +26,23 @@ export default function CoreIdentity() {
         <p>{title}</p>
         <p>{scanTitle}</p>
 
-        {scanning && (
+        {scanning ? (
           <div className="w-full bg-secondary h-4 mt-6 overflow-hidden rounded">
             <div className="bg-primary h-full animate-fill"></div>
           </div>
-        )}
-
-        {!scanning && (
+        ) : (
           <>
-            {visibleLines.map((line, index) => (
-              <p key={index}>{line}</p>
+            {lines.map((line, index) => (
+              <p
+                key={`${index}-${line}`}
+                className="glitch-flash break-words whitespace-pre-line"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationFillMode: 'both'
+                }}
+              >
+                {line}
+              </p>
             ))}
 
             <button
