@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ConsoleNav from '../components/ConsoleNav'
+import { pagesContent } from '../content/pagesContent'
 
-const identityLines = [
-  `${'>'} SUBJECT: MAURICIO SALMÉN`,
-  `${'>'} LOCATION: ARGENTINA`,
-  `${'>'} ROLE: QA ANALYST – VIDEO GAMES / MOBILE / API`,
-  `${'>'} TRAITS: CREATIVE | SYSTEMATIC | GAMER`
-]
+const { title, scanTitle, lines, continue: continueLabel } = pagesContent.coreIdentity
 
 export default function CoreIdentity() {
   const [scanning, setScanning] = useState(true)
@@ -19,9 +15,9 @@ export default function CoreIdentity() {
     const timeout = setTimeout(() => {
       setScanning(false)
       const interval = setInterval(() => {
-        setVisibleLines(prev => [...prev, identityLines[i]])
+        setVisibleLines(prev => [...prev, lines[i]])
         i++
-        if (i >= identityLines.length) clearInterval(interval)
+        if (i >= lines.length) clearInterval(interval)
       }, 600)
     }, 2000)
     return () => clearTimeout(timeout)
@@ -32,8 +28,8 @@ export default function CoreIdentity() {
       <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
         <ConsoleNav />
 
-        <p>{'>'} OPENING core_identity.dat...</p>
-        <p>{'>'} INITIATING BIOMETRIC SCAN...</p>
+        <p>{title}</p>
+        <p>{scanTitle}</p>
 
         {scanning && (
           <div className="w-full bg-secondary h-4 mt-6 overflow-hidden rounded">
@@ -51,7 +47,7 @@ export default function CoreIdentity() {
               className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
               onClick={() => navigate('/story/skills')}
             >
-              {'>>'} CONTINUE TO MODULE: SKILL_MODULES.CFG
+              {continueLabel}
             </button>
           </>
         )}
@@ -59,4 +55,3 @@ export default function CoreIdentity() {
     </div>
   )
 }
-

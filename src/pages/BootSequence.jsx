@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ConsoleNav from '../components/ConsoleNav'
+import { pagesContent } from '../content/pagesContent'
 
-const bootLines = [
-  `${'>'} INIT SYSTEM...`,
-  `${'>'} FILE: mauricio.sys`,
-  `${'>'} SYSTEM STATUS: FRAGMENTED`,
-  `${'>'} ROOT ACCESS: GRANTED ✅`
-]
+const { lines, continue: continueLabel } = pagesContent.bootSequence
 
 export default function BootSequence() {
   const [visibleLines, setVisibleLines] = useState([])
@@ -17,9 +13,9 @@ export default function BootSequence() {
   useEffect(() => {
     let i = 0
     const interval = setInterval(() => {
-      setVisibleLines(prev => [...prev, bootLines[i]])
+      setVisibleLines(prev => [...prev, lines[i]])
       i++
-      if (i >= bootLines.length) {
+      if (i >= lines.length) {
         clearInterval(interval)
         setTimeout(() => {
           setLoading(true)
@@ -48,7 +44,7 @@ export default function BootSequence() {
               className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
               onClick={() => navigate('/story/profile')}
             >
-              {'>>'} CONTINUE TO MODULE: CORE_IDENTITY.DAT
+              {continueLabel}
             </button>
           </>
         )}
@@ -56,3 +52,4 @@ export default function BootSequence() {
     </div>
   )
 }
+

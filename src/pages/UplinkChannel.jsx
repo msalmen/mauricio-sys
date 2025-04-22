@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ConsoleNav from '../components/ConsoleNav'
+import { pagesContent } from '../content/pagesContent'
+
+const {
+  title,
+  namePlaceholder,
+  messagePlaceholder,
+  transmit,
+  confirmation,
+  continue: continueLabel
+} = pagesContent.uplinkChannel
 
 export default function UplinkChannel() {
   const [sent, setSent] = useState(false)
@@ -21,34 +31,34 @@ export default function UplinkChannel() {
       <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
         <ConsoleNav />
 
-        <p>{'>'} uplink_channel.exe</p>
+        <p>{title}</p>
 
         <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
           <input
             name="name"
-            placeholder="NAME"
+            placeholder={namePlaceholder}
             onChange={handleChange}
             className="bg-black border-b border-primary outline-none p-2 text-primary"
           />
           <textarea
             name="message"
-            placeholder="MESSAGE"
+            placeholder={messagePlaceholder}
             onChange={handleChange}
             className="bg-black border border-primary outline-none p-2 h-24 text-primary"
           />
           <button type="submit" className="border border-primary px-4 py-2 hover:animate-pulse">
-            {'>>'} TRANSMIT
+            {transmit}
           </button>
         </form>
 
         {sent && (
           <>
-            <p className="mt-4">{'>>'} TRANSMISSION SENT TO NODE: MAURICIO.SYS ✅</p>
+            <p className="mt-4">{confirmation}</p>
             <button
               className="mt-4 border border-primary px-4 py-2 hover:animate-pulse"
               onClick={() => navigate('/unlock_debug')}
             >
-              {'>>'} FINAL SYSTEM ACCESS
+              {continueLabel}
             </button>
           </>
         )}

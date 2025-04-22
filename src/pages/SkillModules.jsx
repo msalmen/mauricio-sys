@@ -1,29 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ConsoleNav from '../components/ConsoleNav'
+import { pagesContent } from '../content/pagesContent'
 
-const skills = [
-  {
-    name: 'Manual Testing',
-    status: 'OPERATIONAL',
-    details: ['Functional, regression, exploratory', 'Tools: QAse, Trello']
-  },
-  {
-    name: 'API Testing',
-    status: 'STABLE',
-    details: ['Postman, Charles Proxy, REST']
-  },
-  {
-    name: 'UX Validation',
-    status: 'OPERATIONAL',
-    details: ['Screenshots, edge cases, feedback']
-  },
-  {
-    name: 'Unity Debugging',
-    status: 'EXPERIMENTAL',
-    details: ['Unity Editor, UI States, LogCat']
-  }
-]
+const { title, skills, continue: continueLabel } = pagesContent.skillModules
 
 export default function SkillModules() {
   const [expanded, setExpanded] = useState(null)
@@ -34,7 +14,7 @@ export default function SkillModules() {
       <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
         <ConsoleNav />
 
-        <p>{'>'} OPENING skill_modules.cfg...</p>
+        <p>{title}</p>
 
         {skills.map((skill, i) => (
           <div key={i} className="mt-4">
@@ -60,7 +40,7 @@ export default function SkillModules() {
           className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
           onClick={() => navigate('/story/experience')}
         >
-          {'>>'} CONTINUE TO MODULE: EXP_LOG.FDR
+          {continueLabel}
         </button>
       </div>
     </div>

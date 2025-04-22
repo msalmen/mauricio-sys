@@ -1,26 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import ConsoleNav from '../components/ConsoleNav'
+import { pagesContent } from '../content/pagesContent'
 
-const experiences = [
-  {
-    year: '2023–2024',
-    title: 'QA Analyst – TEPY App',
-    details: [
-      'Tested onboarding, pain point flow, device compatibility',
-      'Validated analytics via Mixpanel and Charles Proxy',
-      'Performed manual tests on Android and iOS with Flutter builds'
-    ]
-  },
-  {
-    year: '2022–2023',
-    title: 'QA Tester Freelance – Telemaskotas',
-    details: [
-      'Designed functional test cases using QAse.io',
-      'Reported bugs with Trello (visual and functional)',
-      'Tested responsive and cross-browser compatibility'
-    ]
-  }
-]
+const { title, experiences, continue: continueLabel } = pagesContent.expLog
 
 export default function ExpLog() {
   const navigate = useNavigate()
@@ -30,7 +12,7 @@ export default function ExpLog() {
       <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
         <ConsoleNav />
 
-        <p>{'>'} ACCESSING exp_log.fdr...</p>
+        <p>{title}</p>
 
         {experiences.map((exp, i) => (
           <div key={i} className="mt-6">
@@ -48,10 +30,9 @@ export default function ExpLog() {
           className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
           onClick={() => navigate('/missions')}
         >
-          {'>>'} CONTINUE TO MODULE: MISSIONS/
+          {continueLabel}
         </button>
       </div>
     </div>
   )
 }
-

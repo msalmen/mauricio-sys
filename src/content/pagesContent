@@ -1,0 +1,116 @@
+export const pagesContent = {
+  bootSequence: {
+    lines: [
+      '> INIT SYSTEM...',
+      '> FILE: mauricio.sys',
+      '> SYSTEM STATUS: FRAGMENTED',
+      '> ROOT ACCESS: GRANTED ✅'
+    ],
+    continue: '>> CONTINUE TO MODULE: CORE_IDENTITY.DAT'
+  },
+
+  coreIdentity: {
+    title: '> OPENING core_identity.dat...',
+    scanTitle: '> INITIATING BIOMETRIC SCAN...',
+    lines: [
+      '> SUBJECT: MAURICIO SALMÉN',
+      '> LOCATION: ARGENTINA',
+      '> ROLE: QA ANALYST – VIDEO GAMES / MOBILE / API',
+      '> TRAITS: CREATIVE | SYSTEMATIC | GAMER'
+    ],
+    continue: '>> CONTINUE TO MODULE: SKILL_MODULES.CFG'
+  },
+
+  skillModules: {
+    title: '> OPENING skill_modules.cfg...',
+    continue: '>> CONTINUE TO MODULE: EXP_LOG.FDR',
+    skills: [
+      {
+        name: 'Manual Testing',
+        status: 'OPERATIONAL',
+        details: ['Functional, regression, exploratory', 'Tools: QAse, Trello']
+      },
+      {
+        name: 'API Testing',
+        status: 'STABLE',
+        details: ['Postman, Charles Proxy, REST']
+      },
+      {
+        name: 'UX Validation',
+        status: 'OPERATIONAL',
+        details: ['Screenshots, edge cases, feedback']
+      },
+      {
+        name: 'Unity Debugging',
+        status: 'EXPERIMENTAL',
+        details: ['Unity Editor, UI States, LogCat']
+      }
+    ]
+  },
+
+  expLog: {
+    title: '> ACCESSING exp_log.fdr...',
+    continue: '>> CONTINUE TO MODULE: MISSIONS/',
+    experiences: [
+      {
+        year: '2023–2024',
+        title: 'QA Analyst – TEPY App',
+        details: [
+          'Tested onboarding, pain point flow, device compatibility',
+          'Validated analytics via Mixpanel and Charles Proxy',
+          'Performed manual tests on Android and iOS with Flutter builds'
+        ]
+      },
+      {
+        year: '2022–2023',
+        title: 'QA Tester Freelance – Telemaskotas',
+        details: [
+          'Designed functional test cases using QAse.io',
+          'Reported bugs with Trello (visual and functional)',
+          'Tested responsive and cross-browser compatibility'
+        ]
+      }
+    ]
+  },
+
+  missions: {
+    title: '> OPEN DIRECTORY: /missions/',
+    continue: '>> CONTINUE TO MODULE: UPLINK_CHANNEL.EXE',
+    projects: [
+      {
+        name: 'TEPY App',
+        details: [
+          'Collaborated with devs and PMs in a mobile health app',
+          'Tested critical paths and helped improve UX',
+          'Ensured data flows and event logging across screens'
+        ]
+      },
+      {
+        name: 'Telemaskotas',
+        details: [
+          'Designed test plans and documented bugs',
+          'Provided feedback that improved platform stability',
+          'Worked remotely with startup founders'
+        ]
+      }
+    ]
+  },
+
+  uplinkChannel: {
+    title: '> uplink_channel.exe',
+    namePlaceholder: 'NAME',
+    messagePlaceholder: 'MESSAGE',
+    transmit: '>> TRANSMIT',
+    confirmation: '>> TRANSMISSION SENT TO NODE: MAURICIO.SYS ✅',
+    continue: '>> FINAL SYSTEM ACCESS'
+  },
+
+  unlockDebug: {
+    title: '> unlock_debug',
+    status: '> ADMIN MODE ACTIVATED',
+    stats: ['- Modules viewed: 6/6', '- Easter eggs found: 1'],
+    messageIntro: '>> MESSAGE FROM THE AUTHOR:',
+    messageText: 'If llegaste hasta acá, sos del tipo que explora todo. Eso dice mucho. Contactame 😉',
+    ending: '>> SYSTEM LOCKED — END OF TRANSMISSION'
+  }
+}
