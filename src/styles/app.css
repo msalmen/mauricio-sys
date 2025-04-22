@@ -51,3 +51,37 @@
   80% { transform: translate(2px, -2px); }
   100% { transform: translate(0); }
 }  
+
+@keyframes star-flicker {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.animate-star-flicker {
+  animation: star-flicker 3s infinite ease-in-out;
+}
+
+/* Scrollbar: WebKit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00FF00;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #33ff33;
+}
+
+/* Firefox scrollbar (complementario) */
+html, body {
+  scrollbar-color: #00FF00 transparent;
+  scrollbar-width: thin;
+}

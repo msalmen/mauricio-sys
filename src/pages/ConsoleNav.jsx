@@ -39,9 +39,9 @@ export default function ConsoleNav({ links = defaultLinks }) {
   }, [open])
 
   return (
-    <div className="relative w-full flex justify-end" ref={navRef}>
+    <div className="w-full flex justify-end mb-4" ref={navRef}>
       <button
-        className="glitch-toggle mb-4"
+        className="glitch-toggle"
         onClick={(e) => {
           e.stopPropagation()
           setOpen(!open)
@@ -50,9 +50,7 @@ export default function ConsoleNav({ links = defaultLinks }) {
         {'>>'} TOGGLE NAV
       </button>
 
-      {open && (
-        <NavOverlay links={links} onClose={() => setOpen(false)} />
-      )}
+      {open && <NavOverlay links={links} onClose={() => setOpen(false)} />}
     </div>
   )
 }

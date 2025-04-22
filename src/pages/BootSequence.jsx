@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
 import ConsoleNav from '../components/ConsoleNav'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import TerminalContent from '../components/layout/TerminalContent'
+import VisualSceneWrapper from '../components/visual/VisualSceneWrapper'
 
 const { lines, continue: continueLabel } = pagesContent.bootSequence
 
@@ -28,7 +28,7 @@ export default function BootSequence() {
   }, [])
 
   return (
-    <LayoutWrapper>
+    <VisualSceneWrapper>
       <TerminalContent>
         <ConsoleNav />
 
@@ -51,6 +51,7 @@ export default function BootSequence() {
           </>
         )}
       </TerminalContent>
-    </LayoutWrapper>
+    </VisualSceneWrapper>
   )
 }
+

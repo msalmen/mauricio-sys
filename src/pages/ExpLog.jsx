@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
 import ConsoleNav from '../components/ConsoleNav'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import TerminalContent from '../components/layout/TerminalContent'
+import VisualSceneWrapper from '../components/visual/VisualSceneWrapper'
 
 const { title, experiences, continue: continueLabel } = pagesContent.expLog
 
@@ -10,7 +10,7 @@ export default function ExpLog() {
   const navigate = useNavigate()
 
   return (
-    <LayoutWrapper>
+    <VisualSceneWrapper>
       <TerminalContent>
         <ConsoleNav />
 
@@ -35,6 +35,6 @@ export default function ExpLog() {
           {continueLabel}
         </button>
       </TerminalContent>
-    </LayoutWrapper>
+    </VisualSceneWrapper>
   )
 }

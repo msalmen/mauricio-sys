@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
 import ConsoleNav from '../components/ConsoleNav'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import TerminalContent from '../components/layout/TerminalContent'
+import VisualSceneWrapper from '../components/visual/VisualSceneWrapper'
 
 const { title, skills, continue: continueLabel } = pagesContent.skillModules
 
@@ -12,7 +12,7 @@ export default function SkillModules() {
   const navigate = useNavigate()
 
   return (
-    <LayoutWrapper>
+    <VisualSceneWrapper>
       <TerminalContent>
         <ConsoleNav />
 
@@ -45,6 +45,6 @@ export default function SkillModules() {
           {continueLabel}
         </button>
       </TerminalContent>
-    </LayoutWrapper>
+    </VisualSceneWrapper>
   )
 }

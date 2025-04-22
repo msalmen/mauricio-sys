@@ -86,7 +86,7 @@ export const pagesContent = {
         ]
       },
       {
-        name: 'Telemaskotas',
+        name: 'Telemascotas',
         details: [
           'Designed test plans and documented bugs',
           'Provided feedback that improved platform stability',
