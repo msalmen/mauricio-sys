@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ConsoleNav from '../components/ConsoleNav'
 import { pagesContent } from '../content/pagesContent'
+import ConsoleNav from '../components/ConsoleNav'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import TerminalContent from '../components/layout/TerminalContent'
 
 const { title, scanTitle, lines, continue: continueLabel } = pagesContent.coreIdentity
 
@@ -24,8 +26,8 @@ export default function CoreIdentity() {
   }, [])
 
   return (
-    <div className="p-8 font-crt text-primary bg-background text-xl min-h-screen flex flex-col justify-center items-center">
-      <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
+    <LayoutWrapper>
+      <TerminalContent>
         <ConsoleNav />
 
         <p>{title}</p>
@@ -51,7 +53,7 @@ export default function CoreIdentity() {
             </button>
           </>
         )}
-      </div>
-    </div>
+      </TerminalContent>
+    </LayoutWrapper>
   )
 }

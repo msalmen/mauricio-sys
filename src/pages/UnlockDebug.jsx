@@ -1,6 +1,7 @@
 import { pagesContent } from '../content/pagesContent'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import ConsoleNav from '../components/ConsoleNav'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import TerminalContent from '../components/layout/TerminalContent'
 
 const {
   title,
@@ -14,7 +15,7 @@ const {
 export default function UnlockDebug() {
   return (
     <LayoutWrapper>
-      <div className="font-crt text-primary text-xl max-w-screen-md w-full relative">
+      <TerminalContent>
         <ConsoleNav />
 
         <p>{title}</p>
@@ -30,7 +31,7 @@ export default function UnlockDebug() {
         <p className="text-glitch mt-2">"{messageText}"</p>
 
         <p className="mt-8">{ending}</p>
-      </div>
+      </TerminalContent>
     </LayoutWrapper>
   )
 }

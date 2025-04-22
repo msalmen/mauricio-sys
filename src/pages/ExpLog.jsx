@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import ConsoleNav from '../components/ConsoleNav'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import TerminalContent from '../components/layout/TerminalContent'
 
 const { title, experiences, continue: continueLabel } = pagesContent.expLog
 
@@ -10,7 +11,7 @@ export default function ExpLog() {
 
   return (
     <LayoutWrapper>
-      <div className="font-crt text-primary text-xl max-w-screen-md w-full relative">
+      <TerminalContent>
         <ConsoleNav />
 
         <p>{title}</p>
@@ -33,7 +34,7 @@ export default function ExpLog() {
         >
           {continueLabel}
         </button>
-      </div>
+      </TerminalContent>
     </LayoutWrapper>
   )
 }

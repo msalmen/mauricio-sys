@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { pagesContent } from '../content/pagesContent'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import ConsoleNav from '../components/ConsoleNav'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import TerminalContent from '../components/layout/TerminalContent'
 
 const { title, projects, continue: continueLabel } = pagesContent.missions
 
@@ -12,7 +13,7 @@ export default function Missions() {
 
   return (
     <LayoutWrapper>
-      <div className="font-crt text-primary text-xl max-w-screen-md w-full relative">
+      <TerminalContent>
         <ConsoleNav />
 
         <p>{title}</p>
@@ -41,7 +42,7 @@ export default function Missions() {
         >
           {continueLabel}
         </button>
-      </div>
+      </TerminalContent>
     </LayoutWrapper>
   )
 }

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
-import LayoutWrapper from '../components/layout/LayoutWrapper'
 import ConsoleNav from '../components/ConsoleNav'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import TerminalContent from '../components/layout/TerminalContent'
 
 const { lines, continue: continueLabel } = pagesContent.bootSequence
 
@@ -28,7 +29,7 @@ export default function BootSequence() {
 
   return (
     <LayoutWrapper>
-      <div className="font-crt text-primary text-xl max-w-screen-md w-full relative">
+      <TerminalContent>
         <ConsoleNav />
 
         {visibleLines.map((line, index) => (
@@ -49,7 +50,7 @@ export default function BootSequence() {
             </button>
           </>
         )}
-      </div>
+      </TerminalContent>
     </LayoutWrapper>
   )
 }
