@@ -63,7 +63,7 @@ export const pagesContent = {
       },
       {
         year: '2022–2023',
-        title: 'QA Tester Freelance – Telemaskotas',
+        title: 'QA Tester Freelance – Telemascotas',
         details: [
           'Designed functional test cases using QAse.io',
           'Reported bugs with Trello (visual and functional)',
