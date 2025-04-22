@@ -10,8 +10,7 @@ import ConsoleNav from './components/ConsoleNav'
 
 export default function App() {
   return (
-    <>
-      <ConsoleNav />
+    <>      
       <Routes>
         <Route path="/" element={<BootSequence />} />
         <Route path="/story/profile" element={<CoreIdentity />} />
