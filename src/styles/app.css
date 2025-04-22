@@ -1,0 +1,53 @@
+.glitch-toggle {
+  font-family: 'VT323', monospace;
+  background: transparent;
+  border: 1px solid #00FF00;
+  padding: 0.5rem 1rem;
+  color: #00FF00;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.glitch-toggle:hover {
+  animation: glitch-toggle 0.3s infinite;
+}
+
+@keyframes glitch-toggle {
+  0% { transform: translate(0); opacity: 1; }
+  20% { transform: translate(-1px, 1px); opacity: 0.8; }
+  40% { transform: translate(1px, -1px); opacity: 1; }
+  60% { transform: translate(-2px, 2px); opacity: 0.9; }
+  80% { transform: translate(2px, -2px); opacity: 1; }
+  100% { transform: translate(0); opacity: 1; }
+}
+
+  
+@media (max-width: 640px) {
+  .glitch-toggle {
+    left: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes fill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-fill {
+  animation: fill 2s ease-out forwards;
+}
+
+.text-glitch {
+  animation: glitch-text 0.3s infinite;
+}
+
+@keyframes glitch-text {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}  
