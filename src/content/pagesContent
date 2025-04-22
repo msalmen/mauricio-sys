@@ -110,7 +110,7 @@ export const pagesContent = {
     status: '> ADMIN MODE ACTIVATED',
     stats: ['- Modules viewed: 6/6', '- Easter eggs found: 1'],
     messageIntro: '>> MESSAGE FROM THE AUTHOR:',
-    messageText: 'If llegaste hasta acá, sos del tipo que explora todo. Eso dice mucho. Contactame 😉',
+    messageText: 'Gracias por visitar mi pagina personal. No te olvides de dejar tu comentario!',
     ending: '>> SYSTEM LOCKED — END OF TRANSMISSION'
   }
 }

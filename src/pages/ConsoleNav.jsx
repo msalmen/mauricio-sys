@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import NavOverlay from './NavOverlay'
 
-const links = [
+const defaultLinks = [
   { label: 'core_identity.dat', path: '/story/profile' },
   { label: 'skill_modules.cfg', path: '/story/skills' },
   { label: 'exp_log.fdr', path: '/story/experience' },
@@ -10,7 +10,7 @@ const links = [
   { label: 'unlock_debug', path: '/unlock_debug' }
 ]
 
-export default function ConsoleNav() {
+export default function ConsoleNav({ links = defaultLinks }) {
   const [open, setOpen] = useState(false)
   const navRef = useRef(null)
 
@@ -39,9 +39,9 @@ export default function ConsoleNav() {
   }, [open])
 
   return (
-    <>
+    <div className="relative w-full flex justify-end" ref={navRef}>
       <button
-        className="glitch-toggle"
+        className="glitch-toggle mb-4"
         onClick={(e) => {
           e.stopPropagation()
           setOpen(!open)
@@ -51,36 +51,8 @@ export default function ConsoleNav() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-start justify-start p-4 bg-black bg-opacity-50">
-          <div
-            ref={navRef}
-            className="relative bg-black text-primary border border-primary p-4 font-crt w-full max-w-xs shadow-lg rounded-md"
-          >
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-2 right-2 text-secondary text-xl font-bold hover:text-glitch"
-              aria-label="Close console"
-            >
-              X
-            </button>
-
-            <p className="mb-2 text-secondary">NAV CONSOLE:</p>
-            <ul className="flex flex-col gap-2">
-              {links.map((l, i) => (
-                <li key={i}>
-                  <Link
-                    to={l.path}
-                    onClick={() => setOpen(false)}
-                    className="underline hover:text-glitch"
-                  >
-                    {'[>]'} {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <NavOverlay links={links} onClose={() => setOpen(false)} />
       )}
-    </>
+    </div>
   )
 }

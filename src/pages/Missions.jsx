@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import ConsoleNav from '../components/ConsoleNav'
 import { pagesContent } from '../content/pagesContent'
+import LayoutWrapper from '../components/layout/LayoutWrapper'
+import ConsoleNav from '../components/ConsoleNav'
 
 const { title, projects, continue: continueLabel } = pagesContent.missions
 
@@ -10,8 +11,8 @@ export default function Missions() {
   const [open, setOpen] = useState(null)
 
   return (
-    <div className="p-8 font-crt text-primary bg-background text-xl min-h-screen flex flex-col justify-center items-center">
-      <div className="bg-black border-2 border-primary shadow-md rounded-md p-6 w-full max-w-screen-md relative">
+    <LayoutWrapper>
+      <div className="font-crt text-primary text-xl max-w-screen-md w-full relative">
         <ConsoleNav />
 
         <p>{title}</p>
@@ -41,6 +42,7 @@ export default function Missions() {
           {continueLabel}
         </button>
       </div>
-    </div>
+    </LayoutWrapper>
   )
 }
+
