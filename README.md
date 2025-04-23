@@ -30,34 +30,54 @@ Diseñado como una terminal navegable tipo sistema operativo. Cada módulo repre
 
 ---
 
-## 🔁 Últimos cambios
+## 🛠 Módulos activos
 
-### 🔖 Tag: `v1.0-core-glitch`
-
-- 🧠 Eliminado efecto `typewriter` en el módulo `CoreIdentity` (causaba duplicación visual)
-- ✨ Agregado efecto `glitch-flash` animado en cada línea del texto
-- ✅ Padding y espaciado inferior ajustado para evitar superposiciones ópticas
-- ✅ Se mantuvo este efecto exclusivamente en el módulo de identidad
-
----
-
-### 🔖 Tag: `v0.9-layout-stable`
-
-- 🖼 Se implementó el layout modular `VisualSceneWrapper` con:
-  - `DeviceShell`, `AsciiStars`, `CrtOverlay`, `TerminalContent`
-- 🌌 Fondo de estrellas animadas en ASCII (parpadeo aleatorio)
-- 🟩 CRT overlay centrado con brillo interior contenido
-- 📦 Todos los módulos (`BootSequence`, `CoreIdentity`, `Skills`, `ExpLog`, `Missions`, `UplinkChannel`, `UnlockDebug`) actualizados a este sistema
+- `BootSequence`
+- `CoreIdentity`
+- `SkillModules`
+- `ExpLog`
+- `Missions`
+- `UplinkChannel`
+- `UnlockDebug`
 
 ---
 
 ## 🧪 Convención de tags
 
-| Etiqueta             | Propósito                                  |
-|----------------------|---------------------------------------------|
-| `v1.0-core-glitch`   | Glitch animado activo solo en identidad     |
-| `v0.9-layout-stable` | Base visual modular + CRT + navegación      |
-| `vX.Y-modulo-...`    | Formato para iteraciones por bloque         |
+[vX.Y]-[bloque]-[descripción]
+
+Ejemplos:
+
+- `v1.0-core-glitch`
+- `v0.9-layout-stable`
+- `v1.3-uplink-enhance`
+
+---
+
+## 📜 Historial de versiones
+
+### 🔖 `v1.0-core-glitch`
+- 🧠 Eliminado efecto typewriter en el módulo `CoreIdentity`
+- ✨ Agregado efecto visual `glitch-flash` por línea
+- 📏 Ajuste de espaciado inferior para evitar duplicación visual
+- 🔒 Exclusivo del módulo de identidad
+
+---
+
+### 🔖 `v0.9-layout-stable`
+- 🖼 Implementación completa del sistema visual retro:
+  - `DeviceShell`, `VisualSceneWrapper`, `AsciiStars`, `CrtOverlay`, `TerminalContent`
+- 🌌 Fondo generativo de estrellas ASCII
+- 🟩 CRT halo orientado al interior del marco
+- ✅ Todos los módulos actualizados a esta arquitectura
+
+---
+
+### 🔖 `v1.0-docs-update`
+- 📝 Documentación estructurada en `README.md`
+- 📌 Establecida convención de tags para futuras versiones
+- 📦 Descripción completa de la arquitectura y diseño
+- 🔁 Módulos y versiones alineados con historial de cambios
 
 ---
 
@@ -66,3 +86,11 @@ Diseñado como una terminal navegable tipo sistema operativo. Cada módulo repre
 ```bash
 npm install
 npm run dev
+📦 Plan futuro
+🌐 Modo historia en pantalla completa
+
+💾 Opción de exportar CV como archivo descargable
+
+🧩 Métricas de navegación por sección
+
+🔍 Modo unlock_debug expandible con mini easter eggs
