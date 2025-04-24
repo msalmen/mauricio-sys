@@ -107,3 +107,44 @@ html, body {
 .glitch-flash {
   animation: glitch-flash 0.6s ease-out;
 }
+
+@keyframes open-frame {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-window-frame {
+  animation: open-frame 0.6s ease-out forwards;
+}
+
+@keyframes crt-flash {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.05);
+    filter: brightness(5);
+  }
+  25% {
+    opacity: 1;
+    transform: scaleY(1.2);
+  }
+  75% {
+    opacity: 1;
+    transform: scaleY(1);
+    filter: brightness(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.crt-flash-effect {
+  background: #00ff00;
+  opacity: 0;
+  animation: crt-flash 0.7s ease-out;
+}

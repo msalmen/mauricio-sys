@@ -1,12 +1,14 @@
 export const pagesContent = {
   bootSequence: {
     lines: [
-      '> INIT SYSTEM...',
-      '> FILE: mauricio.sys',
-      '> SYSTEM STATUS: FRAGMENTED',
-      '> ROOT ACCESS: GRANTED ✅'
+    '> INIT SYSTEM...',
+    '> FILE: mauricio.sys',
+    '> SYSTEM STATUS: FRAGMENTED',
+    '> LOCATING CORE MODULES...',
+    '> INTERFACE BOOTSTRAP READY',
+    '> ROOT ACCESS: GRANTED ✅'
     ],
-    continue: '>> CONTINUE TO MODULE: CORE_IDENTITY.DAT'
+    continue: '>> PRESS ENTER TO ACCESS CORE MODULE'
   },
 
   coreIdentity: {

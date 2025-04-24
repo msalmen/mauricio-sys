@@ -1,5 +1,6 @@
 import { pagesContent } from '../content/pagesContent'
 import DeviceShell from '../components/visual/DeviceShell'
+import PageWrapper from '../components/layout/PageWrapper'
 
 const {
   title,
@@ -13,19 +14,21 @@ const {
 export default function UnlockDebug() {
   return (
     <DeviceShell>
-      <p>{title}</p>
-      <p>{status}</p>
+      <PageWrapper>
+        <p>{title}</p>
+        <p>{status}</p>
 
-      <div className="mt-4 text-secondary">
-        {stats.map((s, i) => (
-          <p key={i}>{s}</p>
-        ))}
-      </div>
+        <div className="mt-4 text-secondary">
+          {stats.map((s, i) => (
+            <p key={i}>{s}</p>
+          ))}
+        </div>
 
-      <p className="mt-6">{messageIntro}</p>
-      <p className="text-glitch mt-2">"{messageText}"</p>
+        <p className="mt-6">{messageIntro}</p>
+        <p className="text-glitch mt-2">"{messageText}"</p>
 
-      <p className="mt-6">{ending}</p>
+        <p className="mt-6">{ending}</p>
+      </PageWrapper>
     </DeviceShell>
   )
 }

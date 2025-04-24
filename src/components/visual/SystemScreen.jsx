@@ -9,6 +9,9 @@ export default function SystemScreen({ children }) {
       {/* Fondo espacial */}
       <AsciiStars />
 
+      {/* Efecto de encendido CRT */}
+      <div className="crt-flash-effect" />
+
       {/* Contenedor central del sistema operativo */}
       <div className="absolute inset-0 flex justify-center items-center">
         <WindowFrame>
