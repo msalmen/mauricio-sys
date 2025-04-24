@@ -90,6 +90,13 @@ Ejemplos:
 - 🛠 Se eliminó lógica duplicada y errores visuales por múltiples montajes
 - 💡 Preparado para diseño responsivo y futuras mejoras por tamaño de pantalla
 
+---
+
+### 🔖 `v1.3.1`
+
+- 🐛 Corrección: la animación de apertura de `WindowFrame` ya no se reproduce al cambiar de ruta
+- 🎯 Ahora se ejecuta solo una vez por sesión, la primera vez que se monta
+- ✔️ Mejora la sensación de continuidad entre pantallas
 
 ---
 
