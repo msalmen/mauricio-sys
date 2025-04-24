@@ -100,6 +100,18 @@ Ejemplos:
 
 ---
 
+### 🔖 `v1.4-skillmodules-polish`
+
+- 🎮 Los módulos de habilidades ahora se cargan uno por uno como entradas de log
+- 👆 Cada módulo muestra solo el título inicialmente y se expande al tocar o hacer clic
+- ✅ Una vez abiertos, los módulos no se pueden cerrar, reforzando la sensación de desbloqueo
+- 🔘 Se implementó un ícono de toggle retro: `[>]` → `[v]`
+- 🎨 Se eliminó el recuadro visual para cada módulo, mejorando la limpieza y legibilidad
+- ✨ El botón de continuar aparece solo al final y permanece visible
+- 📐 Se ajustó el margen inferior global (`TerminalContent`) para lograr proporción visual con el margen superior
+
+---
+
 ## 🚀 Cómo correr el proyecto
 
 ```bash
