@@ -1,40 +1,35 @@
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
-import ConsoleNav from '../components/ConsoleNav'
-import TerminalContent from '../components/layout/TerminalContent'
-import VisualSceneWrapper from '../components/visual/VisualSceneWrapper'
+import DeviceShell from '../components/visual/DeviceShell'
 
-const { title, experiences, continue: continueLabel } = pagesContent.expLog
+const { title, continue: continueLabel, experiences } = pagesContent.expLog
 
 export default function ExpLog() {
   const navigate = useNavigate()
 
   return (
-    <VisualSceneWrapper>
-      <TerminalContent>
-        <ConsoleNav />
+    <DeviceShell>
+      <p>{title}</p>
 
-        <p>{title}</p>
-
+      <div className="mt-4 flex flex-col gap-4">
         {experiences.map((exp, i) => (
-          <div key={i} className="mt-6">
-            <p className="text-secondary">{exp.year}</p>
-            <p className="font-bold">{exp.title}</p>
-            <ul className="ml-4 mt-2 list-disc text-secondary">
+          <div key={i} className="border border-primary p-4 rounded">
+            <p className="text-glitch font-bold">{exp.year} — {exp.title}</p>
+            <ul className="mt-2 list-disc list-inside text-sm text-secondary">
               {exp.details.map((d, j) => (
                 <li key={j}>{d}</li>
               ))}
             </ul>
           </div>
         ))}
+      </div>
 
-        <button
-          className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
-          onClick={() => navigate('/missions')}
-        >
-          {continueLabel}
-        </button>
-      </TerminalContent>
-    </VisualSceneWrapper>
+      <button
+        className="mt-8 border border-primary px-4 py-2 hover:animate-pulse"
+        onClick={() => navigate('/missions')}
+      >
+        {continueLabel}
+      </button>
+    </DeviceShell>
   )
 }

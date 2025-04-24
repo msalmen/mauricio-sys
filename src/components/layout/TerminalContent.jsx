@@ -1,8 +1,10 @@
+import ConsoleNav from '../ConsoleNav'
+
 export default function TerminalContent({ children }) {
   return (
-    <div className="font-crt text-primary text-xl w-full h-full overflow-y-auto pt-6 pr-6 pb-8 pl-6 relative flex flex-col">
+    <div className="relative z-20 bg-black bg-opacity-95 w-full h-full overflow-y-auto flex flex-col justify-start p-6 font-crt text-primary text-xl rounded-[12px]">
+      <ConsoleNav />
       {children}
-      <div className="h-6" aria-hidden="true" />
     </div>
   )
 }

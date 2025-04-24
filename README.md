@@ -86,8 +86,9 @@ Ejemplos:
 ```bash
 npm install
 npm run dev
+
+
 📦 Plan futuro
-🌐 Modo historia en pantalla completa
 
 💾 Opción de exportar CV como archivo descargable
 

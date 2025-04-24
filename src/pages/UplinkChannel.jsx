@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { pagesContent } from '../content/pagesContent'
-import ConsoleNav from '../components/ConsoleNav'
-import TerminalContent from '../components/layout/TerminalContent'
-import VisualSceneWrapper from '../components/visual/VisualSceneWrapper'
+import DeviceShell from '../components/visual/DeviceShell'
 
 const {
   title,
@@ -15,56 +13,59 @@ const {
 } = pagesContent.uplinkChannel
 
 export default function UplinkChannel() {
+  const [form, setForm] = useState({ name: '', message: '' })
   const [sent, setSent] = useState(false)
-  const [formData, setFormData] = useState({ name: '', message: '' })
   const navigate = useNavigate()
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setForm({ ...form, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSent(true)
+    // Simulación de envío
+    setTimeout(() => {
+      setSent(true)
+    }, 500)
   }
 
   return (
-    <VisualSceneWrapper>
-      <TerminalContent>
-        <ConsoleNav />
+    <DeviceShell>
+      <p>{title}</p>
 
-        <p>{title}</p>
+      <form className="mt-4 flex flex-col gap-4 max-w-md" onSubmit={handleSubmit}>
+        <input
+          name="name"
+          placeholder={namePlaceholder}
+          onChange={handleChange}
+          className="bg-black border-b border-primary outline-none p-1"
+        />
+        <textarea
+          name="message"
+          placeholder={messagePlaceholder}
+          rows="4"
+          onChange={handleChange}
+          className="bg-black border-b border-primary outline-none p-1 resize-none"
+        />
+        <button
+          type="submit"
+          className="border border-primary px-4 py-2 hover:animate-pulse"
+        >
+          {transmit}
+        </button>
+      </form>
 
-        <form className="mt-4 flex flex-col gap-4" onSubmit={handleSubmit}>
-          <input
-            name="name"
-            placeholder={namePlaceholder}
-            onChange={handleChange}
-            className="bg-black border-b border-primary outline-none p-2 text-primary"
-          />
-          <textarea
-            name="message"
-            placeholder={messagePlaceholder}
-            onChange={handleChange}
-            className="bg-black border border-primary outline-none p-2 h-24 text-primary"
-          />
-          <button type="submit" className="border border-primary px-4 py-2 hover:animate-pulse">
-            {transmit}
+      {sent && (
+        <>
+          <p className="mt-4 text-glitch">{confirmation}</p>
+          <button
+            className="mt-4 border border-primary px-4 py-2 hover:animate-pulse"
+            onClick={() => navigate('/unlock_debug')}
+          >
+            {continueLabel}
           </button>
-        </form>
-
-        {sent && (
-          <>
-            <p className="mt-4">{confirmation}</p>
-            <button
-              className="mt-4 border border-primary px-4 py-2 hover:animate-pulse"
-              onClick={() => navigate('/unlock_debug')}
-            >
-              {continueLabel}
-            </button>
-          </>
-        )}
-      </TerminalContent>
-    </VisualSceneWrapper>
+        </>
+      )}
+    </DeviceShell>
   )
 }
