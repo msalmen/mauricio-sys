@@ -81,6 +81,18 @@ Ejemplos:
 
 ---
 
+### 🔖 `v1.1-layout-stabilized`
+
+- 🧱 Refactor completo del sistema de layout visual
+- 🖼 Se introdujo `WindowFrame` como contenedor central visual
+- 📦 Se reestructuró `SystemScreen`, `TerminalContent` y el orden de capas
+- 🧩 `ConsoleNav` fue desacoplado del overlay flotante y embebido correctamente
+- 🛠 Se eliminó lógica duplicada y errores visuales por múltiples montajes
+- 💡 Preparado para diseño responsivo y futuras mejoras por tamaño de pantalla
+
+
+---
+
 ## 🚀 Cómo correr el proyecto
 
 ```bash
